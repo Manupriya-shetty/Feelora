@@ -1,0 +1,59 @@
+{
+  "name": "MoodEntry",
+  "type": "object",
+  "properties": {
+    "emotion": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "stressed",
+        "angry",
+        "calm",
+        "neutral",
+        "tired",
+        "excited",
+        "anxious"
+      ],
+      "description": "Detected primary emotion"
+    },
+    "emotion_intensity": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Intensity of the emotion from 1-10"
+    },
+    "input_type": {
+      "type": "string",
+      "enum": [
+        "voice",
+        "text",
+        "camera"
+      ],
+      "description": "How the mood was captured"
+    },
+    "transcript": {
+      "type": "string",
+      "description": "Voice-to-text transcript or text input"
+    },
+    "ai_response": {
+      "type": "string",
+      "description": "AI-generated empathetic response"
+    },
+    "mood_color": {
+      "type": "string",
+      "description": "Hex color representing the mood"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords extracted from the entry"
+    }
+  },
+  "required": [
+    "emotion",
+    "input_type"
+  ]
+}
